@@ -17,6 +17,7 @@ def post_create(request):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
+            # formu olustur ama db se kaydetme useri belirlemeliyim
             post = form.save(commit=False)
             # burada post olusturan kisiyi user olarak alsin diye yaptik
             post.author = request.user
